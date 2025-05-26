@@ -1,0 +1,75 @@
+.projects {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+}
+.projects h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #00bcd4;
+}
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.project-card {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 300px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.project-car:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
+}
+.project-card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #00bcd4;
+}
+.project-card p {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.tech-stack span {
+  background-color: #333;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  color: #00bcd4;
+}
+.project-links a {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 1rem;
+  color: #00bcd4;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.project-links a:hover {
+  color: #81c784;
+}
+.project-links svg {
+  margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    width: 90%;
+  }
+}
