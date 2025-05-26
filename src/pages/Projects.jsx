@@ -16,7 +16,7 @@ const projects = [
     description:
       "This very website you're viewing! Built with React and React Router to showcase my skills, education, and projects.",
     liveLink: "https://your-portfolio-link.com",
-    github: "https://github.com/sankarzhub/portfolio",
+    github: "https://github.com/sankarzhub/My-Portfolio",
     tech: ["React", "React Router"],
   },
   {
