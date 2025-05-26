@@ -1,36 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 import { FaHome, FaUser, FaProjectDiagram, FaEnvelope } from "react-icons/fa";
 
 const NavBar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <nav className="navbar">
-      <div className="navbar-logo">My Portfolio</div>
-      <ul className="navbar-links">
+      <div className="navbar-logo">Sankar's Portfolio</div>
+      <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+        &#9776;
+      </div>
+      <ul className={`navbar-links ${menuOpen ? "active" : ""}`}>
         <li>
-          <Link to="/">
+          <Link to="/" onClick={() => setMenuOpen(false)}>
             <FaHome className="nav-icon" />
             Home
           </Link>
         </li>
 
         <li>
-          <Link to="/about">
+          <Link to="/about" onClick={() => setMenuOpen(false)}>
             <FaUser className="nav-icon" />
             About
           </Link>
         </li>
 
         <li>
-          <Link to="/projects">
+          <Link to="/projects" onClick={() => setMenuOpen(false)}>
             <FaProjectDiagram className="nav-icon" />
             Projects
           </Link>
         </li>
 
         <li>
-          <Link to="/contact">
+          <Link to="/contact" onClick={() => setMenuOpen(false)}>
             <FaEnvelope className="nav-icon" />
             Contact
           </Link>
