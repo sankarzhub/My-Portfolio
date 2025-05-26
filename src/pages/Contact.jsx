@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Contact.css";
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub } from "react-icons/fa";
+import axios from"axios";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -11,11 +12,22 @@ const Contact = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  const handSubmit = (e) => {
+  const handleSubmit=async(e)=>{
     e.preventDefault();
-    alert("Message Sent!");
-    setFormData({ name: "", email: "", message: "" });
-  };
+    try{
+      const response=await axios.post("http://localhost:5000/api/contact",formData);
+        if(response.data.success){
+          alert("Message Sent Successfully!");
+          setFormData({name:"",email:"",message:""})
+        }else{
+          alert("Failed to send Message.")
+        }
+      }catch(error){
+          console.error("Error sending message:",error);
+          alert("Error sending message.Please try again later.")
+      }
+    
+  }
   return (
     <section className="contact">
       <h1>Contact Me</h1>
@@ -23,7 +35,7 @@ const Contact = () => {
         Feel free to reach out for collaboration or just a friendly hello 👋
       </p>
       <div className="contact-container">
-        <form onSubmit={handSubmit} className="contact-form">
+        <form onSubmit={handleSubmit} className="contact-form">
           <input
             type="text"
             name="name"

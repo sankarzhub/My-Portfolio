@@ -39,6 +39,9 @@ const NavBar = () => {
             Contact
           </Link>
         </li>
+        <li>
+          <Link to="/admin/login">Admin</Link>
+        </li>
       </ul>
     </nav>
   );
