@@ -7,7 +7,7 @@ const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <nav className="navbar">
-      <div className="navbar-logo">My Portfolio</div>
+      <div className="navbar-logo">Sankar's Portfolio</div>
       <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
         &#9776;
       </div>
