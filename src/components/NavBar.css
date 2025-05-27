@@ -65,7 +65,8 @@
   .navbar-logo {
     margin-bottom: 1rem;
     display: flex;
-    margin-left:250px;
+    align-items:center;
+    margin-left:230px;
   }
   .menu-toggle {
     display: block;
