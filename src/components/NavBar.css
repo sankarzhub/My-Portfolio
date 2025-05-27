@@ -60,11 +60,12 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 1rem;
+    
   }
   .navbar-logo {
     margin-bottom: 1rem;
-    align-items: center;
     display: flex;
+    margin-left:250px;
   }
   .menu-toggle {
     display: block;
