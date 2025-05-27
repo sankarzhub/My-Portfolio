@@ -15,11 +15,10 @@ const projects = [
     title: "Personal Portfolio Website",
     description:
       "This very website you're viewing! Built with React and React Router to showcase my skills, education, and projects.",
-<<<<<<< HEAD
+
     liveLink: "https://sankarportfolio.netlify.app/",
-=======
     liveLink: "https://your-portfolio-link.com",
->>>>>>> 5b1f376 (Changes Updated)
+
     github: "https://github.com/sankarzhub/My-Portfolio",
     tech: ["React", "React Router"],
   },

@@ -63,7 +63,7 @@
   }
   .navbar-logo {
     margin-bottom: 1rem;
-    align-items: center;
+    margin-left: 250px;
     display: flex;
   }
   .menu-toggle {
