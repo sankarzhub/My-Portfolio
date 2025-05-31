@@ -30,10 +30,10 @@ const projects = [
   {
     title: "YouTube Clone Website",
     description:
-      "A simple YouTube homepage clone built with HTML and CSS. It includes a navbar, sidebar, and video thumbnails with a clean, responsive layout.",
-    liveLink: "https://sankarzyoutubeclone.netlify.app",
+      "A simple YouTube homepage clone built with React. It includes a navbar, sidebar, and video thumbnails with a clean, responsive layout.",
+    liveLink: "sankarzreactyoutubeclone.netlify.app",
     github: "https://github.com/sankarzhub/YouTube_Clone",
-    tech: ["HTML", "CSS"],
+    tech: ["React"],
   },
 ];
 
