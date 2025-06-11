@@ -19,15 +19,7 @@ const projects = [
     github: "https://github.com/sankarzhub/My-Portfolio",
     tech: ["React", "React Router"],
   },
-  {
-    title: "Weather Dashboard (Sample)",
-    description:
-      "A simple app that displays weather data using OpenWeather API. Built with clean UI and responsive layout.",
-    liveLink: "#",
-    github: "https://github.com/sankarzhub/weather-app",
-    tech: ["React", "API", "CSS"],
-  },
-  {
+{
     title: "YouTube Clone Website",
     description:
       "A simple YouTube homepage clone built with React. It includes a navbar, sidebar, and video thumbnails with a clean and  responsive layout.",
