@@ -15,19 +15,23 @@ const projects = [
     title: "Personal Portfolio Website",
     description:
       "This very website you're viewing! Built with React and React Router to showcase my skills, education, and projects.",
+<<<<<<< HEAD
 
     liveLink: "https://sankarportfolio.netlify.app/",
 
+=======
+    liveLink: "https://your-portfolio-link.com",
+>>>>>>> 7bb24305f362cda8d086f9b7ee8ff43d60981755
     github: "https://github.com/sankarzhub/My-Portfolio",
     tech: ["React", "React Router"],
   },
-  {
-    title: "Weather Dashboard (Sample)",
+{
+    title: "YouTube Clone Website",
     description:
-      "A simple app that displays weather data using OpenWeather API. Built with clean UI and responsive layout.",
-    liveLink: "#",
-    github: "https://github.com/sankarzhub/weather-app",
-    tech: ["React", "API", "CSS"],
+      "A simple YouTube homepage clone built with React. It includes a navbar, sidebar, and video thumbnails with a clean and  responsive layout.",
+    liveLink: "https://sankarzreactyoutubeclone.netlify.app",
+    github: "https://github.com/sankarzhub/YouTube_Clone_React",
+    tech: ["React"],
   },
   {
     title: "YouTube Clone Website",
