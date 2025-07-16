@@ -15,26 +15,20 @@ const projects = [
     title: "Personal Portfolio Website",
     description:
       "This very website you're viewing! Built with React and React Router to showcase my skills, education, and projects.",
-<<<<<<< HEAD
-
     liveLink: "https://sankarportfolio.netlify.app/",
-
-=======
-    liveLink: "https://your-portfolio-link.com",
->>>>>>> 7bb24305f362cda8d086f9b7ee8ff43d60981755
     github: "https://github.com/sankarzhub/My-Portfolio",
     tech: ["React", "React Router"],
   },
-{
-    title: "YouTube Clone Website",
+  {
+    title: "YouTube Clone Website (React)",
     description:
-      "A simple YouTube homepage clone built with React. It includes a navbar, sidebar, and video thumbnails with a clean and  responsive layout.",
+      "A simple YouTube homepage clone built with React. It includes a navbar, sidebar, and video thumbnails with a clean and responsive layout.",
     liveLink: "https://sankarzreactyoutubeclone.netlify.app",
     github: "https://github.com/sankarzhub/YouTube_Clone_React",
     tech: ["React"],
   },
   {
-    title: "YouTube Clone Website",
+    title: "YouTube Clone Website (HTML/CSS)",
     description:
       "A simple YouTube homepage clone built with HTML and CSS. It includes a navbar, sidebar, and video thumbnails with a clean, responsive layout.",
     liveLink: "https://sankarzyoutubeclone.netlify.app",
