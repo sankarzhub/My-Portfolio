@@ -1,35 +1,26 @@
 import React from "react";
 import "./Footer.css";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { profile } from "../data/profile";
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <p>
-        &copy;{new Date().getFullYear()} Sankara Subramanian.All rights
-        reserved.
-      </p>
-      <div className="footer-links">
-        <a
-          href="https://github.com/sankarzhub"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaGithub className="footer-icon" />
-          GitHub
-        </a>
-        <a
-          href="http://linkedin.com/in/sankarz0206"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaLinkedin className="footer-icon" />
-          LinkedIn
-        </a>
-        <a href="mailto:sankarz2002@gmail.com">
-          <FaEnvelope className="footer-icon" />
-          Email
-        </a>
+      <div className="container footer-inner">
+        <p>
+          &copy; {new Date().getFullYear()} {profile.name}. Built with React &amp; Vite.
+        </p>
+        <div className="footer-links">
+          <a href={profile.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <FaGithub />
+          </a>
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <FaLinkedin />
+          </a>
+          <a href={`mailto:${profile.email}`} aria-label="Email">
+            <FaEnvelope />
+          </a>
+        </div>
       </div>
     </footer>
   );

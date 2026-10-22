@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "../config";
 import "./AdminLogin.css";
 
 const AdminLogin = () => {
@@ -16,7 +17,7 @@ const AdminLogin = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/admin/login",
+        `${API_URL}/api/admin/login`,
         credentials
       );
       if (res.data.success) {
@@ -25,7 +26,7 @@ const AdminLogin = () => {
       } else {
         alert("Login Failed!");
       }
-    } catch (err) {
+    } catch {
       alert("Invalid Credentials!");
     }
   };

@@ -1,14 +1,14 @@
 .admin-messages {
   padding: 2rem;
-  background-color: #f4f6f8;
+  background-color: var(--bg);
   min-height: 90vh;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-sans);
 }
 
 .admin-messages h2 {
   text-align: center;
   margin-bottom: 2rem;
-  color: #222;
+  color: var(--text);
 }
 
 .logout-btn {
@@ -31,7 +31,7 @@
 .admin-messages table {
   width: 100%;
   border-collapse: collapse;
-  background-color: white;
+  background-color: var(--surface);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   overflow: hidden;
@@ -41,25 +41,25 @@
 .admin-messages td {
   padding: 1rem;
   text-align: left;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--border);
   font-size: 15px;
   word-break: break-word;
 }
 
 .admin-messages th {
-  background-color: #007bff;
-  color: white;
+  background-color: var(--accent);
+  color: var(--on-accent);
   font-weight: 600;
 }
 
 .admin-messages tr:hover {
-  background-color: #f1f1f1;
+  background-color: var(--surface-2);
 }
 
 .admin-messages p {
   text-align: center;
   font-size: 18px;
-  color: #666;
+  color: var(--text-muted);
 }
 
 /* 🔁 Responsive Table */
@@ -79,10 +79,10 @@
 
   .admin-messages tr {
     margin-bottom: 1rem;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border);
     border-radius: 10px;
     padding: 0.5rem;
-    background-color: white;
+    background-color: var(--surface);
   }
 
   .admin-messages td {
@@ -97,7 +97,7 @@
     left: 1rem;
     top: 0.8rem;
     font-weight: bold;
-    color: #555;
+    color: var(--text-faint);
     text-align: left;
   }
 }

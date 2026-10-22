@@ -1,42 +1,51 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import profileImage from "../assets/profile.jpg";
-import { FaCode, FaExternalLinkAlt, FaEnvelope } from "react-icons/fa";
-import "./Home.css";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import Hero from "../sections/Hero";
+import About from "../sections/About";
+import Experience from "../sections/Experience";
+import Skills from "../sections/Skills";
+import Projects from "../sections/Projects";
+import Education from "../sections/Education";
+import Contact from "../sections/Contact";
+import "../sections/Sections.css";
 
 const Home = () => {
-  return (
-    <section className="home">
-      <h1>
-        <FaCode className="icon" />
-        Hi,I'm Sankara Subramanian
-      </h1>
-      <h2>MERN Stack Developer</h2>
-      <h3>I love turning ideas into beautiful, performant web apps.</h3>
+  const { hash } = useLocation();
 
-      <p>
-        I build modern, full-stack web applications using MongoDB, Express,
-        React, and Node.js. Passionate about clean code, performance, and
-        solving real-world problems.
-      </p>
-      <div className="image">
-        <img src={profileImage} alt="Sankar" className="profile-image" />
-      </div>
-      <div className="home-buttons">
-        <Link to="/projects">
-          <button>
-            View Projects
-            <FaExternalLinkAlt className="button-icon" />
-          </button>
-        </Link>
-        <Link to="/contact">
-          <button>
-            Contact Me
-            <FaEnvelope className="button-icon" />
-          </button>
-        </Link>
-      </div>
-    </section>
+  // Scroll to the requested section when arriving via a /#section link or redirect
+  useEffect(() => {
+    if (!hash) return;
+    document.getElementById(hash.slice(1))?.scrollIntoView();
+  }, [hash]);
+
+  // Fade sections in as they scroll into view
+  useEffect(() => {
+    const els = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("visible");
+            observer.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+    els.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <>
+      <Hero />
+      <About />
+      <Experience />
+      <Skills />
+      <Projects />
+      <Education />
+      <Contact />
+    </>
   );
 };
 

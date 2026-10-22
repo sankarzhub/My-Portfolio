@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./AdminMessages.css";
+import { API_URL } from "../config";
 
 const AdminMessages = () => {
   const [messages, setMessages] = useState([]);
@@ -11,13 +12,13 @@ const AdminMessages = () => {
 
   const fetchMessages = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/admin/messages", {
+      const res = await axios.get(`${API_URL}/api/admin/messages`, {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("adminToken"),
         },
       });
       setMessages(res.data.messages);
-    } catch (err) {
+    } catch {
       alert("Failed to load messages. Please login again.");
     }
   };
@@ -27,20 +28,20 @@ const AdminMessages = () => {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/admin/messages/${id}`, {
+      await axios.delete(`${API_URL}/api/admin/messages/${id}`, {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("adminToken"),
         },
       });
       setMessages(messages.filter((msg) => msg.id !== id));
-    } catch (err) {
+    } catch {
       alert("Failed to delete message.");
     }
   };
 
   return (
     <div className="admin-messages">
-      <h2>📨 Contact Messages</h2>
+      <h2>Contact Messages</h2>
 
       {messages.length === 0 ? (
         <p>No messages found.</p>
