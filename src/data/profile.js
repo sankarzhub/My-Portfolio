@@ -22,7 +22,7 @@ export const about = [
 export const highlights = [
   { value: "1+ yr", label: "Professional experience" },
   { value: "Multi-country", label: "Enterprise platform in production" },
-  { value: "MCA", label: "PET Engineering College, 2024" },
+  { value: "SQL (Advanced)", label: "HackerRank certified, 2026" },
 ];
 
 export const experience = {
@@ -125,11 +125,17 @@ export const education = [
 
 export const certifications = [
   {
+    name: "SQL (Advanced)",
+    issuer: "HackerRank skill certification",
+    year: "2026",
+    credentialId: "BA10CA868283",
+    verifyUrl: "https://www.hackerrank.com/certificates/ba10ca868283",
+  },
+  {
     name: "MERN Full Stack (Grade A)",
     issuer: "SLA Institute · IBM Authorised Certification Partner",
     year: "2025",
     credentialId: "SLA202526701",
     file: "/certificates/mern-full-stack-certificate.pdf",
   },
-  { name: "SQL (Advanced)" },
 ];

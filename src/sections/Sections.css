@@ -314,6 +314,11 @@
   background: linear-gradient(135deg, var(--accent-soft), transparent 60%), var(--surface);
 }
 
+/* A card left alone on the last row stretches instead of leaving a gap */
+.projects-grid > .project-card:last-child:nth-child(even) {
+  grid-column: 1 / -1;
+}
+
 .project-top {
   display: flex;
   justify-content: space-between;

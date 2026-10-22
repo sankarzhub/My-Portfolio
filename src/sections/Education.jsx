@@ -38,6 +38,11 @@ const Education = () => (
                 </div>
                 {c.issuer && <span className="muted">{c.issuer}</span>}
                 {c.credentialId && <span className="credential-id">ID: {c.credentialId}</span>}
+                {c.verifyUrl && (
+                  <a className="cert-link" href={c.verifyUrl} target="_blank" rel="noopener noreferrer">
+                    Verify credential <FaExternalLinkAlt />
+                  </a>
+                )}
                 {c.file && (
                   <a className="cert-link" href={c.file} target="_blank" rel="noopener noreferrer">
                     View certificate <FaExternalLinkAlt />
