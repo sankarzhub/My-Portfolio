@@ -64,7 +64,7 @@ const NavBar = () => {
       <nav className="container navbar-inner">
         <a href="/#top" className="navbar-logo" onClick={() => setMenuOpen(false)}>
           <span className="logo-mark">SS</span>
-          <span className="logo-text">Sankara Subramanian</span>
+          <span className="logo-text">Sankara Subramanian S</span>
         </a>
 
         <ul className={`navbar-links ${menuOpen ? "open" : ""}`}>

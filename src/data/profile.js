@@ -1,7 +1,7 @@
 // All portfolio content lives here so it can be updated without touching components.
 
 export const profile = {
-  name: "Sankara Subramanian",
+  name: "Sankara Subramanian S",
   role: "Software Developer · Full-Stack (MERN)",
   company: "Amshuhu iTech",
   location: "Chennai, Tamil Nadu, India",
