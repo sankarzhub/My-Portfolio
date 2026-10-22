@@ -7,6 +7,7 @@ import Skills from "../sections/Skills";
 import Projects from "../sections/Projects";
 import Education from "../sections/Education";
 import Contact from "../sections/Contact";
+import ScrollExtras from "../components/ScrollExtras";
 import "../sections/Sections.css";
 
 const Home = () => {
@@ -38,6 +39,7 @@ const Home = () => {
 
   return (
     <>
+      <ScrollExtras />
       <Hero />
       <About />
       <Experience />

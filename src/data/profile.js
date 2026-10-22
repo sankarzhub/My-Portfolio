@@ -104,7 +104,6 @@ export const projects = [
     title: "YouTube Clone (HTML/CSS)",
     description:
       "The same layout built with plain HTML and CSS, focused on responsive layout fundamentals.",
-    liveLink: "https://sankarzyoutubeclone.netlify.app",
     github: "https://github.com/sankarzhub/YouTube_Clone",
     tech: ["HTML", "CSS"],
   },
