@@ -219,12 +219,14 @@ button {
   pointer-events: none;
 }
 
-.card:hover::before {
-  opacity: 1;
-}
+@media (hover: hover) {
+  .card:hover::before {
+    opacity: 1;
+  }
 
-.card:hover {
-  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  .card:hover {
+    border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  }
 }
 
 [data-tilt] {
@@ -268,7 +270,10 @@ button {
     padding: 0 16px;
   }
   .section {
-    padding: 72px 0;
+    padding: 60px 0;
+  }
+  .section-title {
+    margin-bottom: 28px;
   }
   .card {
     padding: 22px;

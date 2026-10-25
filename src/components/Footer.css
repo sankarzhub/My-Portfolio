@@ -27,3 +27,16 @@
 .footer-links a:hover {
   color: var(--accent);
 }
+
+@media (pointer: coarse) {
+  .footer-links {
+    gap: 4px;
+    margin-left: -12px;
+  }
+  .footer-links a {
+    display: inline-grid;
+    place-items: center;
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
