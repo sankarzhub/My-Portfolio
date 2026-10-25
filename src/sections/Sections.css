@@ -15,10 +15,116 @@
 
 /* ---------- Hero ---------- */
 .hero {
-  padding: 88px 0 104px;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: 56px 0 64px;
   background:
-    radial-gradient(700px 360px at 80% 0%, var(--accent-soft), transparent 70%),
+    radial-gradient(520px circle at var(--hx, 75%) var(--hy, 20%), var(--accent-soft), transparent 70%),
     var(--bg);
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.45;
+  mask-image: radial-gradient(ellipse at 70% 30%, #000 10%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at 70% 30%, #000 10%, transparent 70%);
+}
+
+.hero-blob {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.35;
+  animation: blob-float 14s ease-in-out infinite alternate;
+}
+
+.blob-1 {
+  width: 380px;
+  height: 380px;
+  top: -120px;
+  right: 8%;
+  background: var(--accent);
+}
+
+.blob-2 {
+  width: 300px;
+  height: 300px;
+  bottom: -140px;
+  left: -60px;
+  background: #8b5cf6;
+  opacity: 0.22;
+  animation-duration: 18s;
+}
+
+@keyframes blob-float {
+  to {
+    transform: translate(-60px, 50px) scale(1.15);
+  }
+}
+
+/* Hero content enters line by line */
+.hero-step {
+  animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+  animation-delay: calc(var(--i, 0) * 90ms + 100ms);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--text) 0%, var(--accent) 50%, var(--text) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine 6s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: -200% center;
+  }
+}
+
+.hero-role-prefix {
+  color: var(--accent);
+}
+
+.typing-caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  margin-left: 3px;
+  vertical-align: text-bottom;
+  background: var(--accent);
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    opacity: 0;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
 .hero-inner {
@@ -76,8 +182,10 @@
 
 .hero-role {
   font-family: var(--font-mono);
-  font-size: 1rem;
-  color: var(--text-muted);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text);
+  min-height: 1.7em;
   margin-bottom: 20px;
 }
 
@@ -104,8 +212,14 @@
   color: var(--text-muted);
 }
 
+.hero-meta a {
+  display: inline-flex;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
 .hero-meta a:hover {
   color: var(--accent);
+  transform: translateY(-3px) scale(1.12);
 }
 
 .hero-location {
@@ -116,21 +230,56 @@
   color: var(--text-faint);
 }
 
-.hero-photo {
+.hero-visual {
+  position: relative;
   justify-self: center;
-  padding: 8px;
-  border: 1px solid var(--border);
-  border-radius: 28px;
-  background: var(--surface);
+  animation: rise 0.9s 0.3s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+}
+
+/* Photo framed by a slowly spinning gradient ring */
+.hero-photo {
+  position: relative;
+  padding: 6px;
+  border-radius: 30px;
+  overflow: hidden;
+  isolation: isolate;
   box-shadow: var(--shadow);
+  transition: transform 0.2s ease-out;
+}
+
+.hero-photo::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  z-index: -1;
+  background: conic-gradient(from 0deg, var(--accent), #8b5cf6, #22d3ee, var(--accent));
+  animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
 }
 
 .hero-photo img {
   width: 320px;
   aspect-ratio: 1;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 24px;
+  background: var(--surface);
 }
+
+.btn-link {
+  color: var(--text-muted);
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.btn-link:hover {
+  color: var(--accent);
+}
+
 
 /* ---------- About ---------- */
 .about-grid {
@@ -261,6 +410,12 @@
 }
 
 /* ---------- Skills ---------- */
+.skill-marquee {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -568,17 +723,17 @@
   .hero-inner {
     gap: 40px;
   }
-  .hero-photo {
+  .hero-visual {
     order: -1;
     justify-self: start;
   }
   .hero-photo {
-    padding: 6px;
+    padding: 4px;
     border-radius: 22px;
   }
   .hero-photo img {
     width: 160px;
-    border-radius: 16px;
+    border-radius: 18px;
   }
   .projects-grid {
     grid-template-columns: 1fr;

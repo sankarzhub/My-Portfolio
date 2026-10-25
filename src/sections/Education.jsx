@@ -7,7 +7,7 @@ const Education = () => (
     <div className="container reveal">
       <p className="section-eyebrow">Education &amp; Certifications</p>
       <h2 className="section-title">Learning never stops</h2>
-      <div className="edu-grid">
+      <div className="edu-grid stagger">
         <div className="card">
           <h3 className="edu-heading">
             <FaGraduationCap /> Education

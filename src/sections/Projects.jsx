@@ -7,9 +7,9 @@ const Projects = () => (
     <div className="container reveal">
       <p className="section-eyebrow">Projects</p>
       <h2 className="section-title">Things I've built</h2>
-      <div className="projects-grid">
+      <div className="projects-grid stagger">
         {projects.map((p) => (
-          <article className={`card project-card ${p.featured ? "featured" : ""}`} key={p.title}>
+          <article className={`card project-card ${p.featured ? "featured" : ""}`} data-tilt key={p.title}>
             <div className="project-top">
               <FaRegFolder className="project-folder" />
               <div className="project-links">

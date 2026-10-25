@@ -12,7 +12,7 @@ const About = () => (
             <p key={i}>{para}</p>
           ))}
         </div>
-        <div className="highlights">
+        <div className="highlights stagger">
           {highlights.map((h) => (
             <div className="highlight card" key={h.label}>
               <strong>{h.value}</strong>

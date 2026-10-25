@@ -197,7 +197,39 @@ button {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 28px;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease-out;
+  position: relative;
+  isolation: isolate;
+}
+
+/* Glow that follows the cursor (--mx/--my are set from Home.jsx) */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(
+    360px circle at var(--mx, 50%) var(--my, 50%),
+    color-mix(in srgb, var(--accent) 14%, transparent),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+}
+
+[data-tilt] {
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 
 /* ---------- Scroll reveal ---------- */
@@ -210,6 +242,25 @@ button {
 .reveal.visible {
   opacity: 1;
   transform: none;
+}
+
+/* Items in a .stagger grid rise one after another once their section is revealed */
+.reveal.visible .stagger > * {
+  animation: stagger-in 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+  animation-delay: calc(var(--i, 0) * 90ms + 150ms);
+}
+
+.stagger > :nth-child(2) { --i: 1; }
+.stagger > :nth-child(3) { --i: 2; }
+.stagger > :nth-child(4) { --i: 3; }
+.stagger > :nth-child(5) { --i: 4; }
+.stagger > :nth-child(6) { --i: 5; }
+
+@keyframes stagger-in {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.97);
+  }
 }
 
 @media (max-width: 640px) {

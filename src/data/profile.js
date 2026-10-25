@@ -9,6 +9,9 @@ export const profile = {
   phone: "+91-9363207767",
   github: "https://github.com/sankarzhub",
   linkedin: "https://www.linkedin.com/in/sankarz0206",
+  resume: "/resume/Sankara-Subramanian-S-Resume.pdf",
+  // Cycled through by the typing effect in the hero
+  roles: ["Full-Stack Developer", "MERN Stack Developer", "Dashboard & API Builder", "SQL Optimiser"],
   tagline:
     "I build analytics dashboards, REST APIs and SQL that stays fast at scale, turning large volumes of sales data into reports teams can act on.",
 };
@@ -23,6 +26,16 @@ export const highlights = [
   { value: "1+ yr", label: "Professional experience" },
   { value: "Multi-country", label: "Enterprise platform in production" },
   { value: "SQL (Advanced)", label: "HackerRank certified, 2026" },
+];
+
+// Headlines for the breaking-news ticker under the hero
+export const ticker = [
+  "Building analytics dashboards for iSteer at Amshuhu iTech",
+  "HackerRank certified: SQL (Advanced)",
+  "MERN Full Stack, Grade A (SLA Institute, IBM Authorised Partner)",
+  "Migrating heavy MySQL reports to ClickHouse",
+  "REST APIs with Node.js & Express",
+  "Open to full-stack opportunities",
 ];
 
 export const experience = {

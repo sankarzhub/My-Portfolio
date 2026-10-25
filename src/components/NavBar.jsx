@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { FaBars, FaTimes, FaMoon, FaSun } from "react-icons/fa";
+import { FaBars, FaTimes, FaMoon, FaSun, FaDownload } from "react-icons/fa";
+import { profile } from "../data/profile";
 import "./NavBar.css";
 
 const links = [
@@ -82,6 +83,9 @@ const NavBar = () => {
         </ul>
 
         <div className="navbar-actions">
+          <a href={profile.resume} download className="resume-btn" aria-label="Download resume">
+            <FaDownload /> <span>Resume</span>
+          </a>
           <button
             className="icon-btn"
             onClick={toggleTheme}

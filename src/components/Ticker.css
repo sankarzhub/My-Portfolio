@@ -1,0 +1,143 @@
+.ticker {
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.ticker-viewport {
+  flex: 1;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 40s linear infinite;
+}
+
+.ticker-track.reverse {
+  animation-direction: reverse;
+}
+
+.ticker:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+.ticker-list {
+  display: flex;
+  list-style: none;
+}
+
+@keyframes ticker-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ---------- News band ---------- */
+.ticker-news {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.ticker-news .ticker-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px 0 max(24px, calc((100vw - var(--container)) / 2 + 24px));
+  border-right: 1px solid var(--border);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Same green pulse as the hero status chip */
+.ticker-live {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: pulse 2s infinite;
+}
+
+.ticker-news li {
+  display: flex;
+  align-items: center;
+  padding: 14px 0;
+  white-space: nowrap;
+}
+
+.ticker-news li::after {
+  content: "";
+  width: 4px;
+  height: 4px;
+  margin: 0 28px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* ---------- Skill chips ---------- */
+.ticker-chips .ticker-track {
+  animation-duration: 30s;
+}
+
+.ticker-chips li {
+  margin-right: 12px;
+  padding: 10px 20px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  white-space: nowrap;
+  transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.ticker-chips li:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* Without motion, show the items as a static wrapped list instead */
+@media (prefers-reduced-motion: reduce) {
+  .ticker-viewport {
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+  .ticker-track {
+    width: auto;
+  }
+  .ticker-list {
+    flex-wrap: wrap;
+  }
+  .ticker-list[aria-hidden="true"] {
+    display: none;
+  }
+  .ticker-news li {
+    padding: 8px 0;
+    white-space: normal;
+  }
+  .ticker-chips li {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 640px) {
+  .ticker-news {
+    font-size: 0.85rem;
+  }
+  .ticker-news .ticker-label {
+    padding: 0 14px 0 16px;
+  }
+}
+  
